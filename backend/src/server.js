@@ -2,6 +2,7 @@ import express from "express";
 import dotenv from "dotenv";
 import {nanoid} from "nanoid";
 
+
 dotenv.config({
     path: "./.env"
 })
@@ -17,11 +18,15 @@ app.use(express.urlencoded({
     extended:true
 }));
 
+
+
 //connect to DB
 import {connectDB} from "./config/db.config.js";
 connectDB();
 
 //Routes
+import shorturlRouter from "./routes/shorturl.routesl.js";
+app.use("/api/v1/", shorturlRouter);
 
 
 
