@@ -26,7 +26,9 @@ connectDB();
 
 //Routes
 import shorturlRouter from "./routes/shorturl.routesl.js";
+import authRouter from "./routes/auth.route.js";
 app.use("/api/v1/", shorturlRouter);
+app.use("/api/v1/", authRouter);
 
 
 
